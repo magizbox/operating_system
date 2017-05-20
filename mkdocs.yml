@@ -1,38 +1,16 @@
-site_name: Python
+site_name: Operating Systems
 site_author: "Vu Anh"
 google_analytics: ['UA-68978617-1', 'magizbox.com']
-repo_url: https://github.com/magizbox/python/
+repo_url: https://github.com/magizbox/operating_system/
 edit_uri: edit/master/docs/
 
 pages:
 - "<span class='fa fa-home'></span> Home": "index.md"
-- "<span class='fa fa-cloud-download'></span> Get Started": 'get_started.md'
-- "<span class='fa fa-book'></span> Learn":
-  - "Basic Syntax":
-    - "Overview": 'basic_syntax.md'
-    - "Yield and Generator": 'basic_syntax_yield.md'
-  - "Data Structure":
-    - "Number": 'data_number.md'
-    - "Collection": 'data_collection.md'
-    - "String": 'data_string.md'
-    - "Time": 'data_time.md'
-    - "Object": 'data_object.md'
-  - "OOP": 'oop.md'
-  - "Operating System": 'os.md'
-  - "IO": 'io.md'
-  - "Networking": 'networking.md'
-  - "Concurrency and Parallelism": 'concurrency_parallelism.md'
-  - "Event Based": 'event_based.md'
-  - "Logging": 'logging.md'
-  - "Configuration": 'configuration.md'
-  - "Test": 'test.md'
-  - "Web": 'web.md'
-  - "IDE": 'ide.md'
-  - "Package Manager": 'package_manager.md'
-  - "Environment": 'environment.md'
-  - "Module": 'make_a_module.md'
-  - "Production": 'production.md'
-- "<span class='fa fa-question-circle'></span> Ask": "ask.md"
+- "Linux":
+  - "Linux": 'os_linux.md'
+  - "Ubuntu": 'os_ubuntu.md'
+  - "CentOS": 'os_centos.md'
+- "Windows": 'os_windows.md'
 
 markdown_extensions:
     - footnotes

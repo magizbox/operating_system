@@ -1,42 +1,34 @@
-## What is Python?
+## Operating Systems
 
-> Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.
+>  An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. All computer programs, excluding firmware, require an operating system to function.
 
-**Python is Interpreted**
+**Key Concepts**
 
-Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.
-
-**Python is Interactive**
-
-You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.
-
-**Python is Object-Oriented**
-
-Python supports Object-Oriented style or technique of programming that encapsulates code within objects.
-
-**Python is Beginner Friendly**
-
-Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.
+1. IO: File Operations
+2. Security: User Environments
+3. Network Operations
+4. Process Manager
+5. System Information
+6. Text Processing & Pipeline
+7. Device Manager
 
 ## Books
 
-<div class="books" gid="1gQFMXZtynpuTenoOQNGCHttArT4NspTWcyJQr5ps9Mk"></div>
+<div class="books" gid="1GnjQLSF7G7glu-VWnCUSh3Nty1V1-wEKwMjCAa09R9I"></div>
 <div class="clearfix"></div>
 
 ## Courses
 
-<div class="courses" gid="1frO9QYhgsXbMzcyXoA4czWkxTWF8RBTJVf9uoO1rElU"></div>
+<div class="courses" gid="1J1lj5RPWXfYB-rwZHMZUNhK-WXz6sOCNMBs3vI_-XV8"></div>
 <div class="clearfix"></div>
 
 ## Videos
 
-<div class="videos" gid="1WMjweKiok6GnxZr9sIPx32RqgdYIQXSaI9gqs3A9TWI"></div>
+<div class="videos" gid="18vEFMiP3zGY5vPcBWKUL0MW0kEGLN4-U164R4Nw8VRY"></div>
 <div class="clearfix"></div>
 
-## Challenges
+## Suggested Reading 
 
-* [www.pythonchallenge.com](http://www.pythonchallenge.com/)
-
-## External Links
-
-* [Top 10 Python Libraries Of 2015](http://blog.tryolabs.com/2015/12/15/top-10-python-libraries-of-2015/)
+* Operating System Tutorial, [tutorialspoint.com](http://www.tutorialspoint.com/operating_system/index.htm)
+* OS Development Tutorials, [osdever.net](http://www.osdever.net/tutorials/index)
+* Inside the Linux scheduler, [ibm.com](https://www.ibm.com/developerworks/linux/library/l-scheduler/)
