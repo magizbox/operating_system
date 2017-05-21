@@ -1,8 +1,8 @@
 # Operating System 
 
-A mostly reasonable approach to Python
+A mostly reasonable approach to Operating System 
 
-![](https://img.shields.io/badge/awesome-python_tutorial-brightgreen.svg)
+![](https://img.shields.io/badge/awesome-os_tutorial-brightgreen.svg)
 
 ## Contributing
 
