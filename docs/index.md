@@ -1,4 +1,4 @@
-## Operating Systems
+## Operating System
 
 >  An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. All computer programs, excluding firmware, require an operating system to function.
 

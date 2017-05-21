@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Operating Systems\n\n\n\n\nAn operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. All computer programs, excluding firmware, require an operating system to function.\n\n\n\n\nKey Concepts\n\n\n\n\nIO: File Operations\n\n\nSecurity: User Environments\n\n\nNetwork Operations\n\n\nProcess Manager\n\n\nSystem Information\n\n\nText Processing \n Pipeline\n\n\nDevice Manager\n\n\n\n\nBooks\n\n\n\n\n\n\n\n\nCourses\n\n\n\n\n\n\n\n\nVideos\n\n\n\n\n\n\n\n\nSuggested Reading\n\n\n\n\nOperating System Tutorial, \ntutorialspoint.com\n\n\nOS Development Tutorials, \nosdever.net\n\n\nInside the Linux scheduler, \nibm.com", 
+            "text": "Operating System\n\n\n\n\nAn operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. All computer programs, excluding firmware, require an operating system to function.\n\n\n\n\nKey Concepts\n\n\n\n\nIO: File Operations\n\n\nSecurity: User Environments\n\n\nNetwork Operations\n\n\nProcess Manager\n\n\nSystem Information\n\n\nText Processing \n Pipeline\n\n\nDevice Manager\n\n\n\n\nBooks\n\n\n\n\n\n\n\n\nCourses\n\n\n\n\n\n\n\n\nVideos\n\n\n\n\n\n\n\n\nSuggested Reading\n\n\n\n\nOperating System Tutorial, \ntutorialspoint.com\n\n\nOS Development Tutorials, \nosdever.net\n\n\nInside the Linux scheduler, \nibm.com", 
             "title": "<span class='fa fa-home'></span> Home"
         }, 
         {
-            "location": "/#operating-systems", 
+            "location": "/#operating-system", 
             "text": "An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. All computer programs, excluding firmware, require an operating system to function.   Key Concepts   IO: File Operations  Security: User Environments  Network Operations  Process Manager  System Information  Text Processing   Pipeline  Device Manager", 
-            "title": "Operating Systems"
+            "title": "Operating System"
         }, 
         {
             "location": "/#books", 
