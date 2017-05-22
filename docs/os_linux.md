@@ -82,35 +82,11 @@ hdparm -iT /dev/sda
 badblocks -s /dev/sda
 ```
 
-## Users
+## Storage Management
 
-```
-# Show the active uder id with login and group
-id
+[File Commands](#file-commands) | [Compressions/Archives](#compression-archives) | [Search](#search) | [Directory Traverse](#directory-traverse) | [Disk Usage](#disk-usage)
 
-# Show the last logins on the system
-last
-
-# Show who is logged on the system
-who
-
-# Add group "admin"
-groupadd admin
-
-# Create user "sam"
-useradd -c "Sam Tomshi"
-
-# Delete user sam
-userdel sam
-
-# Add user "sam"
-adduser sam
-
-# Modify user information
-usermod
-```
-
-## File Commands
+### File Commands
 
 ```
 # display all infromation about files/directories
@@ -177,7 +153,74 @@ wc
 xargs
 ```
 
-## Process Related
+### Compression/Archives
+
+```
+# create tar named home.tar contianing home
+tar cf home.tar home
+
+# extract the files from file.tar
+tar xf file.tar
+
+# create a tar with gzip compression
+tar czf file.tar.gz files
+
+# compress file and renames it to file.gz
+gzip file
+```
+
+### Search
+
+```
+# search for pattern in files
+grep pattern files
+
+# search recursively for pattern in dir
+grep -r pattern dir
+
+# find all instances of file
+locate file
+
+# find files names that start with "index"
+find /home/tom -name "index"
+
+# find files large than 10000k in /home
+find /home -size +10000k
+```
+
+### Directory Traverse
+
+```
+# to go up on level of the diretory tree
+cd .. 
+
+# go to $HOME directory 
+cd 
+
+# change to /test directory
+cd /test
+```
+
+### Disk Usage
+
+```
+# show free space on mounted filesystems
+df -h
+
+# show free inodes on mounted filesystems
+df -i
+
+# show disks partitions sizes and types
+fdisk -l
+
+# display disk usage in human readable form
+du -ah
+
+# display total disk usage on the current directory
+du -sh
+```
+
+## Process Management 
 
 ```
 # display your currently active processes
@@ -211,7 +254,11 @@ fg
 fg n
 ```
 
-## File Permission Related
+## Protection and Security
+
+[File Permission Related](#file-permission-related) | [Users](#users)
+
+### File Permission Related
 
 ```
 # change the permissions of file to octal 
@@ -231,8 +278,37 @@ chown owner-user:owner-group file-name
 chown owner-user:owner-group directory
 ```
 
+### Users
+
+```
+# Show the active uder id with login and group
+id
+
+# Show the last logins on the system
+last
+
+# Show who is logged on the system
+who
+
+# Add group "admin"
+groupadd admin
+
+# Create user "sam"
+useradd -c "Sam Tomshi"
+
+# Delete user sam
+userdel sam
+
+# Add user "sam"
+adduser sam
+
+# Modify user information
+usermod
+```
+
 ## Network
 
+[File Transfer](#file-transfer) | [SSH and Telnet](#ssh-and-telnet)
 ```
 # display all network ports and ip address
 ifconfig -a
@@ -271,60 +347,17 @@ wget file
 netstat -tupl
 ```
 
-## Compression / Archives
+### File Transfer
 
 ```
-# create tar named home.tar contianing home
-tar cf home.tar home
+# secure copy file.txt to remote host /tmp folder
+scp file.txt server2:/tmp
 
-# extract the files from file.tar
-tar xf file.tar
-
-# create a tar with gzip compression
-tar czf file.tar.gz files
-
-# compress file and renames it to file.gz
-gzip file
+# synchonize source to destination
+rsync -a /home/apps /backup/
 ```
 
-## Install package
-
-```
-# installl rpm based package
-rpm -i pkgname.rpm
-
-# remove package
-rpm -e pkgname
-```
-
-## Install from source
-
-```
-./configure
-make
-make install
-```
-
-## Search
-
-```
-# search for pattern in files
-grep pattern files
-
-# search recursively for pattern in dir
-grep -r pattern dir
-
-# find all instances of file
-locate file
-
-# find files names that start with "index"
-find /home/tom -name "index"
-
-# find files large than 10000k in /home
-find /home -size +10000k
-```
-
-## Login (SSH and Telnet)
+### SSH and Telnet
 
 ```
 # connect to host as user
@@ -337,46 +370,24 @@ ssh -p port user@host
 telnet host
 ```
 
-## File Transfer
+## Applications
+
+### Install package
 
 ```
-# secure copy file.txt to remote host /tmp folder
-scp file.txt server2:/tmp
+# installl rpm based package
+rpm -i pkgname.rpm
 
-# synchonize source to destination
-rsync -a /home/apps /backup/
+# remove package
+rpm -e pkgname
 ```
 
-## Disk Usage
+### Install from source
 
 ```
-# show free space on mounted filesystems
-df -h
-
-# show free inodes on mounted filesystems
-df -i
-
-# show disks partitions sizes and types
-fdisk -l
-
-# display disk usage in human readable form
-du -ah
-
-# display total disk usage on the current directory
-du -sh
-```
-
-## Directory Traverse
-
-```
-# to go up on level of the diretory tree
-cd .. 
-
-# go to $HOME directory 
-cd 
-
-# change to /test directory
-cd /test
+./configure
+make
+make install
 ```
 
 ## Related Reading

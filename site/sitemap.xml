@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2017-05-21</lastmod>
+     <loc>/</loc>
+     <lastmod>2017-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,20 +12,20 @@
     
         
     <url>
-     <loc>None/os_linux/</loc>
-     <lastmod>2017-05-21</lastmod>
+     <loc>/os_linux/</loc>
+     <lastmod>2017-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/os_ubuntu/</loc>
-     <lastmod>2017-05-21</lastmod>
+     <loc>/os_ubuntu/</loc>
+     <lastmod>2017-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/os_centos/</loc>
-     <lastmod>2017-05-21</lastmod>
+     <loc>/os_centos/</loc>
+     <lastmod>2017-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -33,8 +33,8 @@
 
     
     <url>
-     <loc>None/os_windows/</loc>
-     <lastmod>2017-05-21</lastmod>
+     <loc>/os_windows/</loc>
+     <lastmod>2017-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
