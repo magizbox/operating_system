@@ -155,6 +155,11 @@ tasklist
 
 # kill prcess
 taskkill /im chrome.exe /F
+
+# kill process at a certain port
+&gt; netstat -a -o -n | findstr 8080
+  TCP    127.0.0.1:8000         0.0.0.0:0              LISTENING       8476
+&gt; taskkill /F /PID 8476 # 8476 is pid of program listening in port 8000
 </code></pre>
 
 <h3 id="5-system-information">5. System Information</h3>

@@ -282,7 +282,7 @@
         }, 
         {
             "location": "/windows/", 
-            "text": "1. File Operations\n\n\n2. User Environments\n\n\n3. Network Operations\n\n\n3.1 SSH\n\n\nSSH Secure Shell Client (homepage, \ndownload\n)\n\n\n3.2 RTMP\n\n\nrtmpdump (\ndownload\n)\n\n\n3.3 Synchonize\n\n\nFullSync (\nhomepage\n)\n\n\n\n\n4. Process\n\n\n# list process\ntasklist\n\n# kill prcess\ntaskkill /im chrome.exe /F\n\n\n\n\n5. System Information\n\n\n# get architecture\nwmic os get osarchitecture\n#: OSArchitecture\n#: 64-bit\n\n\n\n\nKnown Issues\n\n\nHow to fix MBR\n\n\nFix MBR with command prompt and installation DVD. Fix MBR with command prompt requires the original Windows 8 or 8.1 installation DVD. The instructions are\n\n\n1.Boot from the original installation DVD.\n2.At the Welcome screen, click \"Repair your computer\".\n3.Choose\" Troubleshoot \n Advanced options \n Command Prompt\".\n4.When the Command Prompt loads, type the following commands in order:\n\n\nbootrec /FixMbr\nbootrec /FixBoot\nbootrec /ScanOs\nbootrec /RebuildBcd\n\n\n\n\nRemember to press \"Enter\" after each command and wait for each operation to finish.\n\n\n5.Remove the DVD from the disk tray.\n6.Type exit and Hit \"Enter\".\n7.Restart your computer and check if Windows 8/8.1 can boot now.\n\n\nRead More\n* \nWindows MBR fix", 
+            "text": "1. File Operations\n\n\n2. User Environments\n\n\n3. Network Operations\n\n\n3.1 SSH\n\n\nSSH Secure Shell Client (homepage, \ndownload\n)\n\n\n3.2 RTMP\n\n\nrtmpdump (\ndownload\n)\n\n\n3.3 Synchonize\n\n\nFullSync (\nhomepage\n)\n\n\n\n\n4. Process\n\n\n# list process\ntasklist\n\n# kill prcess\ntaskkill /im chrome.exe /F\n\n# kill process at a certain port\n\n netstat -a -o -n | findstr 8080\n  TCP    127.0.0.1:8000         0.0.0.0:0              LISTENING       8476\n\n taskkill /F /PID 8476 # 8476 is pid of program listening in port 8000\n\n\n\n\n5. System Information\n\n\n# get architecture\nwmic os get osarchitecture\n#: OSArchitecture\n#: 64-bit\n\n\n\n\nKnown Issues\n\n\nHow to fix MBR\n\n\nFix MBR with command prompt and installation DVD. Fix MBR with command prompt requires the original Windows 8 or 8.1 installation DVD. The instructions are\n\n\n1.Boot from the original installation DVD.\n2.At the Welcome screen, click \"Repair your computer\".\n3.Choose\" Troubleshoot \n Advanced options \n Command Prompt\".\n4.When the Command Prompt loads, type the following commands in order:\n\n\nbootrec /FixMbr\nbootrec /FixBoot\nbootrec /ScanOs\nbootrec /RebuildBcd\n\n\n\n\nRemember to press \"Enter\" after each command and wait for each operation to finish.\n\n\n5.Remove the DVD from the disk tray.\n6.Type exit and Hit \"Enter\".\n7.Restart your computer and check if Windows 8/8.1 can boot now.\n\n\nRead More\n* \nWindows MBR fix", 
             "title": "Windows"
         }, 
         {
@@ -317,7 +317,7 @@
         }, 
         {
             "location": "/windows/#4-process", 
-            "text": "# list process\ntasklist\n\n# kill prcess\ntaskkill /im chrome.exe /F", 
+            "text": "# list process\ntasklist\n\n# kill prcess\ntaskkill /im chrome.exe /F\n\n# kill process at a certain port  netstat -a -o -n | findstr 8080\n  TCP    127.0.0.1:8000         0.0.0.0:0              LISTENING       8476  taskkill /F /PID 8476 # 8476 is pid of program listening in port 8000", 
             "title": "4. Process"
         }, 
         {
