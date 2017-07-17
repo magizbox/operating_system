@@ -31,109 +31,129 @@
             "title": "Suggested Reading"
         }, 
         {
-            "location": "/os_linux/", 
-            "text": "Linux\n\n\nLinux is a Unix-like computer operating system assembled under the model of free and open-source software development and distribution. The defining component of Linux is the Linux kernel, an operating system kernel first released on September 17, 1991 by Linus Torvalds. The Free Software Foundation uses the name GNU/Linux to describe the operating system, which has led to some controversy.\n\n\nSystem\n\n\n# display linux system information\nuname -a\n\n# isplay kernel release information\nuname -r\n\n# show how long the system has been running + load\nuptime\n\n# show system host name\nhostname\n\n# display the IPO address of the host\nhostname -i\n\n# show system roeboot history\nlast reboot\n\n# show the current date and time\ndate\n\n# show this month calendar\ncal\n\n# display who is online\nw\n\n# who are logged in as\nwhoami\n\n# display information about user\nfinger user\n\n\n\n\nHardware\n\n\n# detected hardware and boot messages\ndmesg\n\n# CPU model\ncat /proc/cpuinfo\n\n# Hardware memory\ncat /rpoc/meminfo\n\n# List the number of interrupts per CPU per I/O device\ncat /proc/interrupts\n\n# Displays information on hardware configuration of the system\nlshw\n\n# Displays block device related information in Linux\nlsblk\n\n# Used and free memory (-m for MB)\nfree -m\n\n# Show PCI devices\nlspci -tv\n\n# Show USB devices\nlsusb -tv\n\n# Show hardware info from the BIOS\ndmidecode\n\n# Show info about disk sda\nhdparm -i /dev/sda\n\n# Do a read speed test on disk sda\nhdparm -iT /dev/sda\n\n# Test for unreadable blocks on disk sda\nbadblocks -s /dev/sda\n\n\n\n\nStorage Management\n\n\nFile Commands\n | \nCompressions/Archives\n | \nSearch\n | \nDirectory Traverse\n | \nDisk Usage\n\n\nFile Commands\n\n\n# display all infromation about files/directories\nls -al\n\n# Show the path of current directory\npwd\n\n# Create a directory\nmkdir directory-name\n\n# Delete file\nrm file-name\n\n# Delete directory recursively\nrm -r directory-name\n\n# Forcefully remove file\nrm -f file-name\n\n# Forcefully remove directory recursively\nrm -rf directory-name\n\n# Copy file1 to file2\ncp file1 file2\n\n# Copy dir1 to dir2, create dir2 if it doesn't exist\ncp -r dir1 dir2\n\n# Rename source to dest / move source to directory\nmv file1 file2\n\n# Create symbolic link to file-name\nln -s /path/tofile-name link-name\n\n# Create or update file\ntouch file\n\n# Place standard input into file\ncat \n file\n\n# Outut contents of ile\nmore file\n\n# Output first 10 lines of file\nhead file\n\n# Output last 10 lines of file\ntail file\n\n# Output contents of file as it grows starting with the last 10 lines\ntail -f file\n\n# Encrypt file\ngpg -c file\n\n# Decrypt file\ngpg file gpg\n\n# print the number of bytes, words, and lines in files\nwc\n\n# Execute command lines from standard input\nxargs\n\n\n\n\nCompression/Archives\n\n\n# create tar named home.tar contianing home\ntar cf home.tar home\n\n# extract the files from file.tar\ntar xf file.tar\n\n# create a tar with gzip compression\ntar czf file.tar.gz files\n\n# compress file and renames it to file.gz\ngzip file\n\n\n\n\nSearch\n\n\n# search for pattern in files\ngrep pattern files\n\n# search recursively for pattern in dir\ngrep -r pattern dir\n\n# find all instances of file\nlocate file\n\n# find files names that start with \nindex\n\nfind /home/tom -name \nindex\n\n\n# find files large than 10000k in /home\nfind /home -size +10000k\n\n\n\n\nDirectory Traverse\n\n\n# to go up on level of the diretory tree\ncd .. \n\n# go to $HOME directory \ncd \n\n# change to /test directory\ncd /test\n\n\n\n\nDisk Usage\n\n\n# show free space on mounted filesystems\ndf -h\n\n# show free inodes on mounted filesystems\ndf -i\n\n# show disks partitions sizes and types\nfdisk -l\n\n# display disk usage in human readable form\ndu -ah\n\n# display total disk usage on the current directory\ndu -sh\n\n\n\n\nProcess Management\n\n\n# display your currently active processes\nps\n\n# find all process id related to telnet process\nps aux | grep 'telnet'\n\n# memory map of process\npmap\n\n# display all running processes\ntop\n\n# kill process with mentioned pid id\nkillpid\n\n# kill all processes named proc\nkillall proc\n\n# send signal to process with its name\npkill process-name\n\n# lists stopped or background jobs\nbg\n\n# brings the most recent job to foreground\nfg\n\n# brings job n to the foreground\nfg n\n\n\n\n\nProtection and Security\n\n\nFile Permission Related\n | \nUsers\n\n\nFile Permission Related\n\n\n# change the permissions of file to octal \nchmod octal file-name\n# set rwx permission for owner, group, world\nchmod 777 /data/test.c\n# set rwx permission for owner, rw for group and world\nchmod 755 /data/test.c\n\n# change owner of the file\nchown owner-user file\n\n# change owner and group owner of the file\nchown owner-user:owner-group file-name\n\n# change owner and group owner of the directory\nchown owner-user:owner-group directory\n\n\n\n\nUsers\n\n\n# Show the active uder id with login and group\nid\n\n# Show the last logins on the system\nlast\n\n# Show who is logged on the system\nwho\n\n# Add group \nadmin\n\ngroupadd admin\n\n# Create user \nsam\n\nuseradd -c \nSam Tomshi\n\n\n# Delete user sam\nuserdel sam\n\n# Add user \nsam\n\nadduser sam\n\n# Modify user information\nusermod\n\n\n\n\nNetwork\n\n\nFile Transfer\n | \nSSH and Telnet\n\n\n# display all network ports and ip address\nifconfig -a\n\n# display specific ethernet port\nifconfig eth0\n\n# linux tool to show ehternet status\nehthtool eth0\n\n# linux tool to show ethernet status\nmii-tool eth0\n\n# send echo request to test connection\nping host\n\n# get who is information for domain \nwhois domain\n\n# get DNS information for domain\ndig domain\n\n# reverse lookup host\ndig -x host\n\n# lookup DNS ip address for the name\nhost google.com\n\n# lookup local ip address\nhostname -i\n\n# download file\nwget file\n\n# list active connections to/from system\nnetstat -tupl\n\n\n\n\nFile Transfer\n\n\n# secure copy file.txt to remote host /tmp folder\nscp file.txt server2:/tmp\n\n# synchonize source to destination\nrsync -a /home/apps /backup/\n\n\n\n\nSSH and Telnet\n\n\n# connect to host as user\nssh user@host\n\n# connect to host using specific port\nssh -p port user@host\n\n# connect to the system using telnet port\ntelnet host\n\n\n\n\nApplications\n\n\nInstall package\n\n\n# installl rpm based package\nrpm -i pkgname.rpm\n\n# remove package\nrpm -e pkgname\n\n\n\n\nInstall from source\n\n\n./configure\nmake\nmake install\n\n\n\n\nRelated Reading\n\n\n\n\nLearn Basic Linux Commands with This Downloadable Cheat Sheet, \nlifehacker.com", 
+            "location": "/linux/", 
+            "text": "Linux\n\n\nLinux is a Unix-like computer operating system assembled under the model of free and open-source software development and distribution. The defining component of Linux is the Linux kernel, an operating system kernel first released on September 17, 1991 by Linus Torvalds. The Free Software Foundation uses the name GNU/Linux to describe the operating system, which has led to some controversy.\n\n\nSystem\n\n\n# display linux system information\nuname -a\n\n# isplay kernel release information\nuname -r\n\n# show how long the system has been running + load\nuptime\n\n# show system host name\nhostname\n\n# display the IPO address of the host\nhostname -i\n\n# show system roeboot history\nlast reboot\n\n# show the current date and time\ndate\n\n# show this month calendar\ncal\n\n# display who is online\nw\n\n# who are logged in as\nwhoami\n\n# display information about user\nfinger user\n\n\n\n\nHardware\n\n\n# detected hardware and boot messages\ndmesg\n\n# CPU model\ncat /proc/cpuinfo\n\n# Hardware memory\ncat /rpoc/meminfo\n\n# List the number of interrupts per CPU per I/O device\ncat /proc/interrupts\n\n# Displays information on hardware configuration of the system\nlshw\n\n# Displays block device related information in Linux\nlsblk\n\n# Used and free memory (-m for MB)\nfree -m\n\n# Show PCI devices\nlspci -tv\n\n# Show USB devices\nlsusb -tv\n\n# Show hardware info from the BIOS\ndmidecode\n\n# Show info about disk sda\nhdparm -i /dev/sda\n\n# Do a read speed test on disk sda\nhdparm -iT /dev/sda\n\n# Test for unreadable blocks on disk sda\nbadblocks -s /dev/sda\n\n\n\n\nStorage Management\n\n\nFile Commands\n | \nCompressions/Archives\n | \nSearch\n | \nDirectory Traverse\n | \nDisk Usage\n\n\nFile Commands\n\n\n# display all infromation about files/directories\nls -al\n\n# Show the path of current directory\npwd\n\n# Create a directory\nmkdir directory-name\n\n# Delete file\nrm file-name\n\n# Delete directory recursively\nrm -r directory-name\n\n# Forcefully remove file\nrm -f file-name\n\n# Forcefully remove directory recursively\nrm -rf directory-name\n\n# Copy file1 to file2\ncp file1 file2\n\n# Copy dir1 to dir2, create dir2 if it doesn't exist\ncp -r dir1 dir2\n\n# Rename source to dest / move source to directory\nmv file1 file2\n\n# Create symbolic link to file-name\nln -s /path/tofile-name link-name\n\n# Create or update file\ntouch file\n\n# Place standard input into file\ncat \n file\n\n# Outut contents of ile\nmore file\n\n# Output first 10 lines of file\nhead file\n\n# Output last 10 lines of file\ntail file\n\n# Output contents of file as it grows starting with the last 10 lines\ntail -f file\n\n# Encrypt file\ngpg -c file\n\n# Decrypt file\ngpg file gpg\n\n# print the number of bytes, words, and lines in files\nwc\n\n# Execute command lines from standard input\nxargs\n\n\n\n\nCompression/Archives\n\n\n# create tar named home.tar contianing home\ntar cf home.tar home\n\n# extract the files from file.tar\ntar xf file.tar\n\n# create a tar with gzip compression\ntar czf file.tar.gz files\n\n# compress file and renames it to file.gz\ngzip file\n\n\n\n\nSearch\n\n\n# search for pattern in files\ngrep pattern files\n\n# search recursively for pattern in dir\ngrep -r pattern dir\n\n# find all instances of file\nlocate file\n\n# find files names that start with \nindex\n\nfind /home/tom -name \nindex\n\n\n# find files large than 10000k in /home\nfind /home -size +10000k\n\n\n\n\nDirectory Traverse\n\n\n# to go up on level of the diretory tree\ncd .. \n\n# go to $HOME directory \ncd \n\n# change to /test directory\ncd /test\n\n\n\n\nDisk Usage\n\n\n# show free space on mounted filesystems\ndf -h\n\n# show free inodes on mounted filesystems\ndf -i\n\n# show disks partitions sizes and types\nfdisk -l\n\n# display disk usage in human readable form\ndu -ah\n\n# display total disk usage on the current directory\ndu -sh\n\n\n\n\nProcess Management\n\n\nScreen\n\n\n# display your currently active processes\nps\n\n# find all process id related to telnet process\nps aux | grep 'telnet'\n\n# memory map of process\npmap\n\n# display all running processes\ntop\n\n# kill process with mentioned pid id\nkillpid\n\n# kill all processes named proc\nkillall proc\n\n# send signal to process with its name\npkill process-name\n\n# lists stopped or background jobs\nbg\n\n# brings the most recent job to foreground\nfg\n\n# brings job n to the foreground\nfg n\n\n\n\n\nScreen\n\n\n# create new screen\nscreen -S foo\n\n# shortcuts\nctrl-a |   -\n split vertically\nctrl-a S   -\n split horizontaly\nctrl-a Q   -\n unsplit\nctrl-a tab -\n switch from one to other\n\n\n\n\nMove between regions\n\n\nStep 1: Edit \n~/.screenrc\n file\n\n\nbind j focus down\nbind k focus up\nbind l focus right\nbind h focus left\n\n\n\n\nStep 2: Switch between regions\n\n\nctrl-a h -\n left\nctrl-a l -\n right\nctrl-a k -\n up\nctrl-a j -\n down\n\n\n\n\nSuggested Reading\n: \nscreen\n, \nmove between regions\n\n\nProtection and Security\n\n\nFile Permission Related\n | \nUsers\n\n\nFile Permission Related\n\n\n# change the permissions of file to octal \nchmod octal file-name\n# set rwx permission for owner, group, world\nchmod 777 /data/test.c\n# set rwx permission for owner, rw for group and world\nchmod 755 /data/test.c\n\n# change owner of the file\nchown owner-user file\n\n# change owner and group owner of the file\nchown owner-user:owner-group file-name\n\n# change owner and group owner of the directory\nchown owner-user:owner-group directory\n\n\n\n\nUsers\n\n\n# Show the active uder id with login and group\nid\n\n# Show the last logins on the system\nlast\n\n# Show who is logged on the system\nwho\n\n# Add group \nadmin\n\ngroupadd admin\n\n# Create user \nsam\n\nuseradd -c \nSam Tomshi\n\n\n# Delete user sam\nuserdel sam\n\n# Add user \nsam\n\nadduser sam\n\n# Modify user information\nusermod\n\n# change password of current user\npasswd\n\n# change password of any account when login as root, use command\npasswd \naccount name\n\n\n\n\n\nNetwork\n\n\nFile Transfer\n | \nSSH and Telnet\n\n\n# display all network ports and ip address\nifconfig -a\n\n# display specific ethernet port\nifconfig eth0\n\n# linux tool to show ehternet status\nehthtool eth0\n\n# linux tool to show ethernet status\nmii-tool eth0\n\n# send echo request to test connection\nping host\n\n# get who is information for domain \nwhois domain\n\n# get DNS information for domain\ndig domain\n\n# reverse lookup host\ndig -x host\n\n# lookup DNS ip address for the name\nhost google.com\n\n# lookup local ip address\nhostname -i\n\n# list active connections to/from system\nnetstat -tupl\n\n\n\n\nFile Transfer\n\n\n# secure copy file.txt to remote host /tmp folder\nscp file.txt server2:/tmp\n\n# synchonize source to destination\nrsync -a /home/apps /backup/\n\n# download file\nwget file\n\n# transfer data from or to a server\ncurl --proxy http://proxy.example.org:4321 http://remote.example.org/\n\n# modern http client\napt-get install httppie\nyum install httppie\nhttp PUT example.org X-API-Token:123 name=John\n\n\n\n\nSSH and Telnet\n\n\n# connect to host as user\nssh user@host\n\n# connect to host using specific port\nssh -p port user@host\n\n# connect to the system using telnet port\ntelnet host\n\n\n\n\nApplications\n\n\nInstall package\n\n\n# installl rpm based package\nrpm -i pkgname.rpm\n\n# remove package\nrpm -e pkgname\n\n\n\n\nInstall from source\n\n\n./configure\nmake\nmake install\n\n\n\n\nRelated Reading\n\n\n\n\nLearn Basic Linux Commands with This Downloadable Cheat Sheet, \nlifehacker.com", 
             "title": "Linux"
         }, 
         {
-            "location": "/os_linux/#linux", 
+            "location": "/linux/#linux", 
             "text": "Linux is a Unix-like computer operating system assembled under the model of free and open-source software development and distribution. The defining component of Linux is the Linux kernel, an operating system kernel first released on September 17, 1991 by Linus Torvalds. The Free Software Foundation uses the name GNU/Linux to describe the operating system, which has led to some controversy.", 
             "title": "Linux"
         }, 
         {
-            "location": "/os_linux/#system", 
+            "location": "/linux/#system", 
             "text": "# display linux system information\nuname -a\n\n# isplay kernel release information\nuname -r\n\n# show how long the system has been running + load\nuptime\n\n# show system host name\nhostname\n\n# display the IPO address of the host\nhostname -i\n\n# show system roeboot history\nlast reboot\n\n# show the current date and time\ndate\n\n# show this month calendar\ncal\n\n# display who is online\nw\n\n# who are logged in as\nwhoami\n\n# display information about user\nfinger user", 
             "title": "System"
         }, 
         {
-            "location": "/os_linux/#hardware", 
+            "location": "/linux/#hardware", 
             "text": "# detected hardware and boot messages\ndmesg\n\n# CPU model\ncat /proc/cpuinfo\n\n# Hardware memory\ncat /rpoc/meminfo\n\n# List the number of interrupts per CPU per I/O device\ncat /proc/interrupts\n\n# Displays information on hardware configuration of the system\nlshw\n\n# Displays block device related information in Linux\nlsblk\n\n# Used and free memory (-m for MB)\nfree -m\n\n# Show PCI devices\nlspci -tv\n\n# Show USB devices\nlsusb -tv\n\n# Show hardware info from the BIOS\ndmidecode\n\n# Show info about disk sda\nhdparm -i /dev/sda\n\n# Do a read speed test on disk sda\nhdparm -iT /dev/sda\n\n# Test for unreadable blocks on disk sda\nbadblocks -s /dev/sda", 
             "title": "Hardware"
         }, 
         {
-            "location": "/os_linux/#storage-management", 
+            "location": "/linux/#storage-management", 
             "text": "File Commands  |  Compressions/Archives  |  Search  |  Directory Traverse  |  Disk Usage", 
             "title": "Storage Management"
         }, 
         {
-            "location": "/os_linux/#file-commands", 
+            "location": "/linux/#file-commands", 
             "text": "# display all infromation about files/directories\nls -al\n\n# Show the path of current directory\npwd\n\n# Create a directory\nmkdir directory-name\n\n# Delete file\nrm file-name\n\n# Delete directory recursively\nrm -r directory-name\n\n# Forcefully remove file\nrm -f file-name\n\n# Forcefully remove directory recursively\nrm -rf directory-name\n\n# Copy file1 to file2\ncp file1 file2\n\n# Copy dir1 to dir2, create dir2 if it doesn't exist\ncp -r dir1 dir2\n\n# Rename source to dest / move source to directory\nmv file1 file2\n\n# Create symbolic link to file-name\nln -s /path/tofile-name link-name\n\n# Create or update file\ntouch file\n\n# Place standard input into file\ncat   file\n\n# Outut contents of ile\nmore file\n\n# Output first 10 lines of file\nhead file\n\n# Output last 10 lines of file\ntail file\n\n# Output contents of file as it grows starting with the last 10 lines\ntail -f file\n\n# Encrypt file\ngpg -c file\n\n# Decrypt file\ngpg file gpg\n\n# print the number of bytes, words, and lines in files\nwc\n\n# Execute command lines from standard input\nxargs", 
             "title": "File Commands"
         }, 
         {
-            "location": "/os_linux/#compressionarchives", 
+            "location": "/linux/#compressionarchives", 
             "text": "# create tar named home.tar contianing home\ntar cf home.tar home\n\n# extract the files from file.tar\ntar xf file.tar\n\n# create a tar with gzip compression\ntar czf file.tar.gz files\n\n# compress file and renames it to file.gz\ngzip file", 
             "title": "Compression/Archives"
         }, 
         {
-            "location": "/os_linux/#search", 
+            "location": "/linux/#search", 
             "text": "# search for pattern in files\ngrep pattern files\n\n# search recursively for pattern in dir\ngrep -r pattern dir\n\n# find all instances of file\nlocate file\n\n# find files names that start with  index \nfind /home/tom -name  index \n\n# find files large than 10000k in /home\nfind /home -size +10000k", 
             "title": "Search"
         }, 
         {
-            "location": "/os_linux/#directory-traverse", 
+            "location": "/linux/#directory-traverse", 
             "text": "# to go up on level of the diretory tree\ncd .. \n\n# go to $HOME directory \ncd \n\n# change to /test directory\ncd /test", 
             "title": "Directory Traverse"
         }, 
         {
-            "location": "/os_linux/#disk-usage", 
+            "location": "/linux/#disk-usage", 
             "text": "# show free space on mounted filesystems\ndf -h\n\n# show free inodes on mounted filesystems\ndf -i\n\n# show disks partitions sizes and types\nfdisk -l\n\n# display disk usage in human readable form\ndu -ah\n\n# display total disk usage on the current directory\ndu -sh", 
             "title": "Disk Usage"
         }, 
         {
-            "location": "/os_linux/#process-management", 
-            "text": "# display your currently active processes\nps\n\n# find all process id related to telnet process\nps aux | grep 'telnet'\n\n# memory map of process\npmap\n\n# display all running processes\ntop\n\n# kill process with mentioned pid id\nkillpid\n\n# kill all processes named proc\nkillall proc\n\n# send signal to process with its name\npkill process-name\n\n# lists stopped or background jobs\nbg\n\n# brings the most recent job to foreground\nfg\n\n# brings job n to the foreground\nfg n", 
+            "location": "/linux/#process-management", 
+            "text": "Screen  # display your currently active processes\nps\n\n# find all process id related to telnet process\nps aux | grep 'telnet'\n\n# memory map of process\npmap\n\n# display all running processes\ntop\n\n# kill process with mentioned pid id\nkillpid\n\n# kill all processes named proc\nkillall proc\n\n# send signal to process with its name\npkill process-name\n\n# lists stopped or background jobs\nbg\n\n# brings the most recent job to foreground\nfg\n\n# brings job n to the foreground\nfg n", 
             "title": "Process Management"
         }, 
         {
-            "location": "/os_linux/#protection-and-security", 
+            "location": "/linux/#screen", 
+            "text": "# create new screen\nscreen -S foo\n\n# shortcuts\nctrl-a |   -  split vertically\nctrl-a S   -  split horizontaly\nctrl-a Q   -  unsplit\nctrl-a tab -  switch from one to other  Move between regions  Step 1: Edit  ~/.screenrc  file  bind j focus down\nbind k focus up\nbind l focus right\nbind h focus left  Step 2: Switch between regions  ctrl-a h -  left\nctrl-a l -  right\nctrl-a k -  up\nctrl-a j -  down  Suggested Reading :  screen ,  move between regions", 
+            "title": "Screen"
+        }, 
+        {
+            "location": "/linux/#protection-and-security", 
             "text": "File Permission Related  |  Users", 
             "title": "Protection and Security"
         }, 
         {
-            "location": "/os_linux/#file-permission-related", 
+            "location": "/linux/#file-permission-related", 
             "text": "# change the permissions of file to octal \nchmod octal file-name\n# set rwx permission for owner, group, world\nchmod 777 /data/test.c\n# set rwx permission for owner, rw for group and world\nchmod 755 /data/test.c\n\n# change owner of the file\nchown owner-user file\n\n# change owner and group owner of the file\nchown owner-user:owner-group file-name\n\n# change owner and group owner of the directory\nchown owner-user:owner-group directory", 
             "title": "File Permission Related"
         }, 
         {
-            "location": "/os_linux/#users", 
-            "text": "# Show the active uder id with login and group\nid\n\n# Show the last logins on the system\nlast\n\n# Show who is logged on the system\nwho\n\n# Add group  admin \ngroupadd admin\n\n# Create user  sam \nuseradd -c  Sam Tomshi \n\n# Delete user sam\nuserdel sam\n\n# Add user  sam \nadduser sam\n\n# Modify user information\nusermod", 
+            "location": "/linux/#users", 
+            "text": "# Show the active uder id with login and group\nid\n\n# Show the last logins on the system\nlast\n\n# Show who is logged on the system\nwho\n\n# Add group  admin \ngroupadd admin\n\n# Create user  sam \nuseradd -c  Sam Tomshi \n\n# Delete user sam\nuserdel sam\n\n# Add user  sam \nadduser sam\n\n# Modify user information\nusermod\n\n# change password of current user\npasswd\n\n# change password of any account when login as root, use command\npasswd  account name", 
             "title": "Users"
         }, 
         {
-            "location": "/os_linux/#network", 
-            "text": "File Transfer  |  SSH and Telnet  # display all network ports and ip address\nifconfig -a\n\n# display specific ethernet port\nifconfig eth0\n\n# linux tool to show ehternet status\nehthtool eth0\n\n# linux tool to show ethernet status\nmii-tool eth0\n\n# send echo request to test connection\nping host\n\n# get who is information for domain \nwhois domain\n\n# get DNS information for domain\ndig domain\n\n# reverse lookup host\ndig -x host\n\n# lookup DNS ip address for the name\nhost google.com\n\n# lookup local ip address\nhostname -i\n\n# download file\nwget file\n\n# list active connections to/from system\nnetstat -tupl", 
+            "location": "/linux/#network", 
+            "text": "File Transfer  |  SSH and Telnet  # display all network ports and ip address\nifconfig -a\n\n# display specific ethernet port\nifconfig eth0\n\n# linux tool to show ehternet status\nehthtool eth0\n\n# linux tool to show ethernet status\nmii-tool eth0\n\n# send echo request to test connection\nping host\n\n# get who is information for domain \nwhois domain\n\n# get DNS information for domain\ndig domain\n\n# reverse lookup host\ndig -x host\n\n# lookup DNS ip address for the name\nhost google.com\n\n# lookup local ip address\nhostname -i\n\n# list active connections to/from system\nnetstat -tupl", 
             "title": "Network"
         }, 
         {
-            "location": "/os_linux/#file-transfer", 
-            "text": "# secure copy file.txt to remote host /tmp folder\nscp file.txt server2:/tmp\n\n# synchonize source to destination\nrsync -a /home/apps /backup/", 
+            "location": "/linux/#file-transfer", 
+            "text": "# secure copy file.txt to remote host /tmp folder\nscp file.txt server2:/tmp\n\n# synchonize source to destination\nrsync -a /home/apps /backup/\n\n# download file\nwget file\n\n# transfer data from or to a server\ncurl --proxy http://proxy.example.org:4321 http://remote.example.org/\n\n# modern http client\napt-get install httppie\nyum install httppie\nhttp PUT example.org X-API-Token:123 name=John", 
             "title": "File Transfer"
         }, 
         {
-            "location": "/os_linux/#ssh-and-telnet", 
+            "location": "/linux/#ssh-and-telnet", 
             "text": "# connect to host as user\nssh user@host\n\n# connect to host using specific port\nssh -p port user@host\n\n# connect to the system using telnet port\ntelnet host", 
             "title": "SSH and Telnet"
         }, 
         {
-            "location": "/os_linux/#applications", 
+            "location": "/linux/#applications", 
             "text": "", 
             "title": "Applications"
         }, 
         {
-            "location": "/os_linux/#install-package", 
+            "location": "/linux/#install-package", 
             "text": "# installl rpm based package\nrpm -i pkgname.rpm\n\n# remove package\nrpm -e pkgname", 
             "title": "Install package"
         }, 
         {
-            "location": "/os_linux/#install-from-source", 
+            "location": "/linux/#install-from-source", 
             "text": "./configure\nmake\nmake install", 
             "title": "Install from source"
         }, 
         {
-            "location": "/os_linux/#related-reading", 
+            "location": "/linux/#related-reading", 
             "text": "Learn Basic Linux Commands with This Downloadable Cheat Sheet,  lifehacker.com", 
             "title": "Related Reading"
+        }, 
+        {
+            "location": "/linux_shell/", 
+            "text": "Shell\n\n\nBatsh - A language that compiles to Bash and Windows Batch\n\n\nArguments\n\n\n$ cat myscript\n#!/bin/bash\necho \nFirst arg: $1\n\necho \nSecond arg: $2\n\n\n$ ./myscript hello world\nFirst arg: hello\nSecond arg: world", 
+            "title": "Shell"
+        }, 
+        {
+            "location": "/linux_shell/#shell", 
+            "text": "Batsh - A language that compiles to Bash and Windows Batch", 
+            "title": "Shell"
+        }, 
+        {
+            "location": "/linux_shell/#arguments", 
+            "text": "$ cat myscript\n#!/bin/bash\necho  First arg: $1 \necho  Second arg: $2 \n\n$ ./myscript hello world\nFirst arg: hello\nSecond arg: world", 
+            "title": "Arguments"
         }, 
         {
             "location": "/os_ubuntu/", 
@@ -261,89 +281,89 @@
             "title": "Step 6. Launching PyCharm Python IDE"
         }, 
         {
-            "location": "/os_windows/", 
-            "text": "1. File Operations\n\n\n2. User Environments\n\n\n3. Network Operations\n\n\n3.1 SSH\n\n\nSSH Secure Shell Client (homepage, \ndownload\n)\n\n\n3.2 RTMP\n\n\nrtmpdump (\ndownload\n)\n\n\n3.3 Synchonize\n\n\nFullSync (\nhomepage\n)\n\n\n\n\n4. Process\n\n\n# list process\ntasklist\n\n# kill prcess\ntaskkill /im chrome.exe /F\n\n\n\n\n5. System Information\n\n\n# get architecture\nwmic os get osarchitecture\n#: OSArchitecture\n#: 64-bit\n\n\n\n\n\nDownload Windows 7 Professional 64 bit: https://drive.google.com/folderview?id=0B3PWckYm7eLkZS1pVHloNzdrTFk\n=sharing#list\n\n\n\n\nWindows Shell\n\n\nBatsh - A language that compiles to Bash and Windows Batch\n\n\nPrint\n\n\n# print HELLO WORLD\necho HELLO WORLD\n\n# print blank line\necho.\n\n\n\n\nArguments \n3\n\n\necho %1\n\n\n\n\n\n\n$ test.bat helloworld\nhelloworld\n\n\n\n\nSleep\n\n\nSleep for 5 seconds \n1\n\n\ntimeout 5 \n NUL\n\n# deprecated\nping 127.0.0.1 -n 6 \n nul\n\n\n\n\nConditional \n4\n\n\nif exist input.dat goto handle_input_file\n    echo The file input.dat does not exist\n    pause\n    exit /b\n:handle_input_file\n\n\n\n\nLoop \n2\n\n\n:while1\necho forever loop\ngoto :while1\n\n\n\n\n\n\n$ test.bat\nforever loop\nforever loop\nforever loop\n...\n\n\n\n\nWindows: How to fix MBR\n\n\nFix MBR with command prompt and installation DVD. Fix MBR with command prompt requires the original Windows 8 or 8.1 installation DVD. The instructions are \n1\n\n\n1.Boot from the original installation DVD.\n2.At the Welcome screen, click \"Repair your computer\".\n3.Choose\" Troubleshoot \n Advanced options \n Command Prompt\".\n4.When the Command Prompt loads, type the following commands in order:\n\n\nbootrec /FixMbr\nbootrec /FixBoot\nbootrec /ScanOs\nbootrec /RebuildBcd\n\n\n\n\nRemember to press \"Enter\" after each command and wait for each operation to finish.\n\n\n5.Remove the DVD from the disk tray.\n6.Type exit and Hit \"Enter\".\n7.Restart your computer and check if Windows 8/8.1 can boot now.\n\n\nInstalling Theano on Windows 8.1\n\n\nGetting\u00a0theano works in Windows 8.1 is not easy but possible. The important is use the right receipts. I found the right receipts and nice tutorial \nhere\n\n\nReceipts\n\n\n\n\nWindows 8.1 64-bit\n\n\nCUDA 64-bit 7\n\n\nVisual Studio 2013 (compiler 12.0) Ultimate\n\n\nAnaconda 64-bit 2.1.0\n\n\nGit-scm\n\n\n\n\n\nI'm very happy getting things done.\n\n\nPS C:Usersrain\n python\nPython 2.7.8 |Anaconda 2.1.0 (64-bit)| (default, Jul 2 2014, 15:12:11) [MSC v.1500 64 bit (AMD64)] on win32\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\nAnaconda is brought to you by Continuum Analytics.\nPlease check out: http://continuum.io/thanks and https://binstar.org\n\n import theano\nDEBUG: nvcc STDOUT mod.cu\nCreating library C:/Users/rain/AppData/Local/Theano/compiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_\n3_GenuineIntel-2.7.8-64/cuda_ndarray/cuda_ndarray.lib and object C:/Users/rain/AppData/Local/Theano/compiledir_Windows-8\n-6.2.9200-Intel64_Family_6_Model_60_Stepping_3_GenuineIntel-2.7.8-64/cuda_ndarray/cuda_ndarray.exp\n\nUsing gpu device 0: GeForce GTX 980\nDEBUG: nvcc STDOUT mod.cu\nCreating library C:/Users/rain/AppData/Local/Theano/compiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_\n3_GenuineIntel-2.7.8-64/tmpgt3iqm/c8d7bd33dfef61705c2854dd1f0cb7ce.lib and object C:/Users/rain/AppData/Local/Theano/com\npiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_3_GenuineIntel-2.7.8-64/tmpgt3iqm/c8d7bd33dfef61705c2854dd\n1f0cb7ce.exp\n\nDEBUG: nvcc STDOUT mod.cu\nCreating library C:/Users/rain/AppData/Local/Theano/compiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_\n3_GenuineIntel-2.7.8-64/tmpfab1so/0fc80e98cce631ecaa526b69dd28dae1.lib and object C:/Users/rain/AppData/Local/Theano/com\npiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_3_GenuineIntel-2.7.8-64/tmpfab1so/0fc80e98cce631ecaa526b69\ndd28dae1.exp\n\n\n\n\n\n\n\n\n\n\n\nWindows MBR fix\n\n\n\n\n\n\nWhile loop in batch\n\n\n\n\n\n\nCommand line parameters\n\n\n\n\n\n\nWindows Batch Files for Fun and Profit", 
+            "location": "/windows/", 
+            "text": "1. File Operations\n\n\n2. User Environments\n\n\n3. Network Operations\n\n\n3.1 SSH\n\n\nSSH Secure Shell Client (homepage, \ndownload\n)\n\n\n3.2 RTMP\n\n\nrtmpdump (\ndownload\n)\n\n\n3.3 Synchonize\n\n\nFullSync (\nhomepage\n)\n\n\n\n\n4. Process\n\n\n# list process\ntasklist\n\n# kill prcess\ntaskkill /im chrome.exe /F\n\n\n\n\n5. System Information\n\n\n# get architecture\nwmic os get osarchitecture\n#: OSArchitecture\n#: 64-bit\n\n\n\n\nKnown Issues\n\n\nHow to fix MBR\n\n\nFix MBR with command prompt and installation DVD. Fix MBR with command prompt requires the original Windows 8 or 8.1 installation DVD. The instructions are\n\n\n1.Boot from the original installation DVD.\n2.At the Welcome screen, click \"Repair your computer\".\n3.Choose\" Troubleshoot \n Advanced options \n Command Prompt\".\n4.When the Command Prompt loads, type the following commands in order:\n\n\nbootrec /FixMbr\nbootrec /FixBoot\nbootrec /ScanOs\nbootrec /RebuildBcd\n\n\n\n\nRemember to press \"Enter\" after each command and wait for each operation to finish.\n\n\n5.Remove the DVD from the disk tray.\n6.Type exit and Hit \"Enter\".\n7.Restart your computer and check if Windows 8/8.1 can boot now.\n\n\nRead More\n* \nWindows MBR fix", 
             "title": "Windows"
         }, 
         {
-            "location": "/os_windows/#1-file-operations", 
+            "location": "/windows/#1-file-operations", 
             "text": "", 
             "title": "1. File Operations"
         }, 
         {
-            "location": "/os_windows/#2-user-environments", 
+            "location": "/windows/#2-user-environments", 
             "text": "", 
             "title": "2. User Environments"
         }, 
         {
-            "location": "/os_windows/#3-network-operations", 
+            "location": "/windows/#3-network-operations", 
             "text": "", 
             "title": "3. Network Operations"
         }, 
         {
-            "location": "/os_windows/#31-ssh", 
+            "location": "/windows/#31-ssh", 
             "text": "SSH Secure Shell Client (homepage,  download )", 
             "title": "3.1 SSH"
         }, 
         {
-            "location": "/os_windows/#32-rtmp", 
+            "location": "/windows/#32-rtmp", 
             "text": "rtmpdump ( download )", 
             "title": "3.2 RTMP"
         }, 
         {
-            "location": "/os_windows/#33-synchonize", 
+            "location": "/windows/#33-synchonize", 
             "text": "FullSync ( homepage )", 
             "title": "3.3 Synchonize"
         }, 
         {
-            "location": "/os_windows/#4-process", 
+            "location": "/windows/#4-process", 
             "text": "# list process\ntasklist\n\n# kill prcess\ntaskkill /im chrome.exe /F", 
             "title": "4. Process"
         }, 
         {
-            "location": "/os_windows/#5-system-information", 
-            "text": "# get architecture\nwmic os get osarchitecture\n#: OSArchitecture\n#: 64-bit  \nDownload Windows 7 Professional 64 bit: https://drive.google.com/folderview?id=0B3PWckYm7eLkZS1pVHloNzdrTFk =sharing#list", 
+            "location": "/windows/#5-system-information", 
+            "text": "# get architecture\nwmic os get osarchitecture\n#: OSArchitecture\n#: 64-bit", 
             "title": "5. System Information"
         }, 
         {
-            "location": "/os_windows/#windows-shell", 
-            "text": "Batsh - A language that compiles to Bash and Windows Batch", 
-            "title": "Windows Shell"
+            "location": "/windows/#known-issues", 
+            "text": "How to fix MBR  Fix MBR with command prompt and installation DVD. Fix MBR with command prompt requires the original Windows 8 or 8.1 installation DVD. The instructions are  1.Boot from the original installation DVD.\n2.At the Welcome screen, click \"Repair your computer\".\n3.Choose\" Troubleshoot   Advanced options   Command Prompt\".\n4.When the Command Prompt loads, type the following commands in order:  bootrec /FixMbr\nbootrec /FixBoot\nbootrec /ScanOs\nbootrec /RebuildBcd  Remember to press \"Enter\" after each command and wait for each operation to finish.  5.Remove the DVD from the disk tray.\n6.Type exit and Hit \"Enter\".\n7.Restart your computer and check if Windows 8/8.1 can boot now.  Read More\n*  Windows MBR fix", 
+            "title": "Known Issues"
         }, 
         {
-            "location": "/os_windows/#print", 
+            "location": "/windows_batch/", 
+            "text": "Windows Batch\n\n\nBatsh - A language that compiles to Bash and Windows Batch\n\n\nPrint\n\n\n# print HELLO WORLD\necho HELLO WORLD\n\n# print blank line\necho.\n\n\n\n\nArguments \n3\n\n\necho %1\n\n\n\n\n\n\n$ test.bat helloworld\nhelloworld\n\n\n\n\nSleep\n\n\nSleep for 5 seconds \n1\n\n\ntimeout 5 \n NUL\n\n# deprecated\nping 127.0.0.1 -n 6 \n nul\n\n\n\n\nConditional \n4\n\n\nif exist input.dat goto handle_input_file\n    echo The file input.dat does not exist\n    pause\n    exit /b\n:handle_input_file\n\n\n\n\nLoop \n2\n\n\n:while1\necho forever loop\ngoto :while1\n\n\n\n\n\n\n$ test.bat\nforever loop\nforever loop\nforever loop\n...\n\n\n\n\n\n\n\n\n\n\n\n\nHow to sleep for 5 seconds in Windows's Command Prompt? (or DOS)\n\n\n\n\n\n\nWhile loop in batch\n\n\n\n\n\n\nCommand line parameters\n\n\n\n\n\n\nWindows Batch Files for Fun and Profit", 
+            "title": "Batch"
+        }, 
+        {
+            "location": "/windows_batch/#windows-batch", 
+            "text": "Batsh - A language that compiles to Bash and Windows Batch", 
+            "title": "Windows Batch"
+        }, 
+        {
+            "location": "/windows_batch/#print", 
             "text": "# print HELLO WORLD\necho HELLO WORLD\n\n# print blank line\necho.", 
             "title": "Print"
         }, 
         {
-            "location": "/os_windows/#arguments-3", 
+            "location": "/windows_batch/#arguments-3", 
             "text": "echo %1   $ test.bat helloworld\nhelloworld", 
             "title": "Arguments 3"
         }, 
         {
-            "location": "/os_windows/#sleep", 
+            "location": "/windows_batch/#sleep", 
             "text": "Sleep for 5 seconds  1  timeout 5   NUL\n\n# deprecated\nping 127.0.0.1 -n 6   nul", 
             "title": "Sleep"
         }, 
         {
-            "location": "/os_windows/#conditional-4", 
+            "location": "/windows_batch/#conditional-4", 
             "text": "if exist input.dat goto handle_input_file\n    echo The file input.dat does not exist\n    pause\n    exit /b\n:handle_input_file", 
             "title": "Conditional 4"
         }, 
         {
-            "location": "/os_windows/#loop-2", 
-            "text": ":while1\necho forever loop\ngoto :while1   $ test.bat\nforever loop\nforever loop\nforever loop\n...", 
+            "location": "/windows_batch/#loop-2", 
+            "text": ":while1\necho forever loop\ngoto :while1   $ test.bat\nforever loop\nforever loop\nforever loop\n...       How to sleep for 5 seconds in Windows's Command Prompt? (or DOS)    While loop in batch    Command line parameters    Windows Batch Files for Fun and Profit", 
             "title": "Loop 2"
-        }, 
-        {
-            "location": "/os_windows/#windows-how-to-fix-mbr", 
-            "text": "Fix MBR with command prompt and installation DVD. Fix MBR with command prompt requires the original Windows 8 or 8.1 installation DVD. The instructions are  1  1.Boot from the original installation DVD.\n2.At the Welcome screen, click \"Repair your computer\".\n3.Choose\" Troubleshoot   Advanced options   Command Prompt\".\n4.When the Command Prompt loads, type the following commands in order:  bootrec /FixMbr\nbootrec /FixBoot\nbootrec /ScanOs\nbootrec /RebuildBcd  Remember to press \"Enter\" after each command and wait for each operation to finish.  5.Remove the DVD from the disk tray.\n6.Type exit and Hit \"Enter\".\n7.Restart your computer and check if Windows 8/8.1 can boot now.", 
-            "title": "Windows: How to fix MBR"
-        }, 
-        {
-            "location": "/os_windows/#installing-theano-on-windows-81", 
-            "text": "Getting\u00a0theano works in Windows 8.1 is not easy but possible. The important is use the right receipts. I found the right receipts and nice tutorial  here  Receipts   Windows 8.1 64-bit  CUDA 64-bit 7  Visual Studio 2013 (compiler 12.0) Ultimate  Anaconda 64-bit 2.1.0  Git-scm   I'm very happy getting things done.  PS C:Usersrain  python\nPython 2.7.8 |Anaconda 2.1.0 (64-bit)| (default, Jul 2 2014, 15:12:11) [MSC v.1500 64 bit (AMD64)] on win32\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\nAnaconda is brought to you by Continuum Analytics.\nPlease check out: http://continuum.io/thanks and https://binstar.org  import theano\nDEBUG: nvcc STDOUT mod.cu\nCreating library C:/Users/rain/AppData/Local/Theano/compiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_\n3_GenuineIntel-2.7.8-64/cuda_ndarray/cuda_ndarray.lib and object C:/Users/rain/AppData/Local/Theano/compiledir_Windows-8\n-6.2.9200-Intel64_Family_6_Model_60_Stepping_3_GenuineIntel-2.7.8-64/cuda_ndarray/cuda_ndarray.exp\n\nUsing gpu device 0: GeForce GTX 980\nDEBUG: nvcc STDOUT mod.cu\nCreating library C:/Users/rain/AppData/Local/Theano/compiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_\n3_GenuineIntel-2.7.8-64/tmpgt3iqm/c8d7bd33dfef61705c2854dd1f0cb7ce.lib and object C:/Users/rain/AppData/Local/Theano/com\npiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_3_GenuineIntel-2.7.8-64/tmpgt3iqm/c8d7bd33dfef61705c2854dd\n1f0cb7ce.exp\n\nDEBUG: nvcc STDOUT mod.cu\nCreating library C:/Users/rain/AppData/Local/Theano/compiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_\n3_GenuineIntel-2.7.8-64/tmpfab1so/0fc80e98cce631ecaa526b69dd28dae1.lib and object C:/Users/rain/AppData/Local/Theano/com\npiledir_Windows-8-6.2.9200-Intel64_Family_6_Model_60_Stepping_3_GenuineIntel-2.7.8-64/tmpfab1so/0fc80e98cce631ecaa526b69\ndd28dae1.exp      Windows MBR fix    While loop in batch    Command line parameters    Windows Batch Files for Fun and Profit", 
-            "title": "Installing Theano on Windows 8.1"
         }
     ]
 }

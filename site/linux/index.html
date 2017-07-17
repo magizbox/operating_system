@@ -70,6 +70,10 @@
 </li>
                             
 <li >
+    <a href="../linux_shell/">Shell</a>
+</li>
+                            
+<li >
     <a href="../os_ubuntu/">Ubuntu</a>
 </li>
                             
@@ -78,8 +82,18 @@
 </li>
                         </ul>
                     </li>
-                    <li >
-                        <a href="../os_windows/">Windows</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Windows <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../windows/">Windows</a>
+</li>
+                            
+<li >
+    <a href="../windows_batch/">Batch</a>
+</li>
+                        </ul>
                     </li>
                 </ul>
 
@@ -95,7 +109,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../os_ubuntu/">
+                        <a rel="prev" href="../linux_shell/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -330,6 +344,7 @@ du -sh
 </code></pre>
 
 <h2 id="process-management">Process Management</h2>
+<p><a href="#screen">Screen</a></p>
 <pre><code># display your currently active processes
 ps
 
@@ -361,6 +376,33 @@ fg
 fg n
 </code></pre>
 
+<h3 id="screen">Screen</h3>
+<pre><code># create new screen
+screen -S foo
+
+# shortcuts
+ctrl-a |   -&gt; split vertically
+ctrl-a S   -&gt; split horizontaly
+ctrl-a Q   -&gt; unsplit
+ctrl-a tab -&gt; switch from one to other
+</code></pre>
+
+<p><strong>Move between regions</strong></p>
+<p>Step 1: Edit <code>~/.screenrc</code> file</p>
+<pre><code>bind j focus down
+bind k focus up
+bind l focus right
+bind h focus left
+</code></pre>
+
+<p>Step 2: Switch between regions</p>
+<pre><code>ctrl-a h -&gt; left
+ctrl-a l -&gt; right
+ctrl-a k -&gt; up
+ctrl-a j -&gt; down
+</code></pre>
+
+<p><strong>Suggested Reading</strong>: <a href="https://unix.stackexchange.com/questions/7453/how-to-split-the-terminal-into-more-than-one-view/7455#7455">screen</a>, <a href="https://unix.stackexchange.com/questions/14142/gnu-screen-move-between-regions/286162#286162">move between regions</a></p>
 <h2 id="protection-and-security">Protection and Security</h2>
 <p><a href="#file-permission-related">File Permission Related</a> | <a href="#users">Users</a></p>
 <h3 id="file-permission-related">File Permission Related</h3>
@@ -405,6 +447,12 @@ adduser sam
 
 # Modify user information
 usermod
+
+# change password of current user
+passwd
+
+# change password of any account when login as root, use command
+passwd &lt;account name&gt;
 </code></pre>
 
 <h2 id="network">Network</h2>
@@ -439,9 +487,6 @@ host google.com
 # lookup local ip address
 hostname -i
 
-# download file
-wget file
-
 # list active connections to/from system
 netstat -tupl
 </code></pre>
@@ -452,6 +497,17 @@ scp file.txt server2:/tmp
 
 # synchonize source to destination
 rsync -a /home/apps /backup/
+
+# download file
+wget file
+
+# transfer data from or to a server
+curl --proxy http://proxy.example.org:4321 http://remote.example.org/
+
+# modern http client
+apt-get install httppie
+yum install httppie
+http PUT example.org X-API-Token:123 name=John
 </code></pre>
 
 <h3 id="ssh-and-telnet">SSH and Telnet</h3>

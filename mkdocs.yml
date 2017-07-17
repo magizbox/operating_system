@@ -7,10 +7,14 @@ edit_uri: edit/master/docs/
 pages:
 - "<span class='fa fa-home'></span> Home": "index.md"
 - "Linux":
-  - "Linux": 'os_linux.md'
+  - "Linux": 'linux.md'
+  - "Shell": 'linux_shell.md'
   - "Ubuntu": 'os_ubuntu.md'
   - "CentOS": 'os_centos.md'
-- "Windows": 'os_windows.md'
+- "Windows":
+  - "Windows": 'windows.md'
+  - "Batch": 'windows_batch.md'
+
 
 markdown_extensions:
     - footnotes

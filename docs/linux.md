@@ -222,6 +222,8 @@ du -sh
 
 ## Process Management 
 
+[Screen](#screen)
+
 ```
 # display your currently active processes
 ps
@@ -253,6 +255,41 @@ fg
 # brings job n to the foreground
 fg n
 ```
+
+### Screen
+
+```
+# create new screen
+screen -S foo
+
+# shortcuts
+ctrl-a |   -> split vertically
+ctrl-a S   -> split horizontaly
+ctrl-a Q   -> unsplit
+ctrl-a tab -> switch from one to other
+```
+
+**Move between regions**
+
+Step 1: Edit `~/.screenrc` file
+
+```
+bind j focus down
+bind k focus up
+bind l focus right
+bind h focus left
+```
+
+Step 2: Switch between regions
+
+```
+ctrl-a h -> left
+ctrl-a l -> right
+ctrl-a k -> up
+ctrl-a j -> down
+```
+
+**Suggested Reading**: [screen](https://unix.stackexchange.com/questions/7453/how-to-split-the-terminal-into-more-than-one-view/7455#7455), [move between regions](https://unix.stackexchange.com/questions/14142/gnu-screen-move-between-regions/286162#286162)
 
 ## Protection and Security
 
@@ -304,11 +341,18 @@ adduser sam
 
 # Modify user information
 usermod
+
+# change password of current user
+passwd
+
+# change password of any account when login as root, use command
+passwd <account name>
 ```
 
 ## Network
 
 [File Transfer](#file-transfer) | [SSH and Telnet](#ssh-and-telnet)
+
 ```
 # display all network ports and ip address
 ifconfig -a
@@ -340,9 +384,6 @@ host google.com
 # lookup local ip address
 hostname -i
 
-# download file
-wget file
-
 # list active connections to/from system
 netstat -tupl
 ```
@@ -355,6 +396,17 @@ scp file.txt server2:/tmp
 
 # synchonize source to destination
 rsync -a /home/apps /backup/
+
+# download file
+wget file
+
+# transfer data from or to a server
+curl --proxy http://proxy.example.org:4321 http://remote.example.org/
+
+# modern http client
+apt-get install httppie
+yum install httppie
+http PUT example.org X-API-Token:123 name=John
 ```
 
 ### SSH and Telnet

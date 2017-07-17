@@ -8,7 +8,7 @@
         <meta name="author" content="Vu Anh">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Ubuntu - Operating System</title>
+        <title>Batch - Operating System</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -61,7 +61,7 @@
                     <li >
                         <a href=".."><span class='fa fa-home'></span> Home</a>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
@@ -73,8 +73,8 @@
     <a href="../linux_shell/">Shell</a>
 </li>
                             
-<li class="active">
-    <a href="./">Ubuntu</a>
+<li >
+    <a href="../os_ubuntu/">Ubuntu</a>
 </li>
                             
 <li >
@@ -82,7 +82,7 @@
 </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Windows <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
@@ -90,8 +90,8 @@
     <a href="../windows/">Windows</a>
 </li>
                             
-<li >
-    <a href="../windows_batch/">Batch</a>
+<li class="active">
+    <a href="./">Batch</a>
 </li>
                         </ul>
                     </li>
@@ -104,12 +104,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../linux_shell/">
+                        <a rel="next" href="../windows/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../os_centos/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -126,56 +126,80 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#ubuntu">Ubuntu</a></li>
-            <li><a href="#apps">Apps</a></li>
-            <li><a href="#gui-ubuntu-desktop">GUI `ubuntu-desktop</a></li>
-        <li class="main "><a href="#install-intellij-in-ubuntu">Install IntellIJ in ubuntu</a></li>
-            <li><a href="#downloads-intellij">Downloads intellij</a></li>
-            <li><a href="#create-ubuntu-desktop-launcher">Create Ubuntu desktop launcher</a></li>
-        <li class="main "><a href="#install-pycharm-on-ubuntu">Install Pycharm on Ubuntu</a></li>
+        <li class="main active"><a href="#windows-batch">Windows Batch</a></li>
+            <li><a href="#print">Print</a></li>
+            <li><a href="#arguments-3">Arguments 3</a></li>
+            <li><a href="#sleep">Sleep</a></li>
+            <li><a href="#conditional-4">Conditional 4</a></li>
+            <li><a href="#loop-2">Loop 2</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="ubuntu">Ubuntu</h1>
-<h3 id="apps">Apps</h3>
-<h4 id="install-git">Install git</h4>
-<pre><code class="shell">apt-get install -y git
+<h1 id="windows-batch">Windows Batch</h1>
+<p><a href="http://batsh.org/">Batsh - A language that compiles to Bash and Windows Batch</a></p>
+<h3 id="print">Print</h3>
+<pre><code># print HELLO WORLD
+echo HELLO WORLD
+
+# print blank line
+echo.
 </code></pre>
 
-<h3 id="gui-ubuntu-desktop">GUI `ubuntu-desktop</h3>
-<pre><code>apt-get install ubuntu-desktop
+<h3 id="arguments-3">Arguments <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></h3>
+<pre><code class="powershell">echo %1
 </code></pre>
 
-<p>Then restart computer, ubuntu-desktop will run in the next login.</p>
-<h1 id="install-intellij-in-ubuntu">Install IntellIJ in ubuntu</h1>
-<h3 id="downloads-intellij">Downloads intellij</h3>
-<pre><code>https://www.jetbrains.com/idea/download/
+<blockquote>
+<p>$ test.bat helloworld
+helloworld</p>
+</blockquote>
+<h3 id="sleep">Sleep</h3>
+<p>Sleep for 5 seconds <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<pre><code class="powershell">timeout 5 &gt; NUL
+
+# deprecated
+ping 127.0.0.1 -n 6 &gt; nul
 </code></pre>
 
-<h3 id="create-ubuntu-desktop-launcher">Create Ubuntu desktop launcher</h3>
-<p>run intellij : cd to folder intellij</p>
-<pre><code>cd file://path intellij/idea.sh
+<h3 id="conditional-4">Conditional <sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup></h3>
+<pre><code class="powershell">if exist input.dat goto handle_input_file
+    echo The file input.dat does not exist
+    pause
+    exit /b
+:handle_input_file
 </code></pre>
 
-<p>Create Ubuntu desktop</p>
-<pre><code>Tools &gt; Create Desktop Entry
+<h3 id="loop-2">Loop <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></h3>
+<pre><code>:while1
+echo forever loop
+goto :while1
 </code></pre>
 
-<h1 id="install-pycharm-on-ubuntu">Install Pycharm on Ubuntu</h1>
-<p>Step 1. To add the PPA, open terminal from the Dash, Launcher, or via Ctrl+Alt+T shortcut keys. When it opens, run command:</p>
-<pre><code>sudo add-apt-repository ppa:mystic-mirage/pycharm
-</code></pre>
-
-<p>Step 2. After adding the PPA, update system package cache and install the IDE via Synaptic Package Manager. Or just run below commands one by one in terminal:</p>
-<pre><code>sudo apt-get update
-
-sudo apt-get install pycharm
-</code></pre>
-
-<p>Step 3. After finishing the installation, start Pycharm. It will prompt you to activate with license, choose the <code>License Server</code> checkbox and copy below row to it:</p>
-<pre><code>http://idea.qinxi1992.cn
-</code></pre></div>
+<blockquote>
+<p>$ test.bat
+forever loop
+forever loop
+forever loop
+...</p>
+</blockquote>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="http://stackoverflow.com/questions/1672338/how-to-sleep-for-5-seconds-in-windowss-command-prompt-or-dos">How to sleep for 5 seconds in Windows's Command Prompt? (or DOS)</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="http://stackoverflow.com/questions/1788473/while-loop-in-batch">While loop in batch</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="http://www.robvanderwoude.com/parameters.php">Command line parameters</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="http://www.quepublishing.com/articles/article.aspx?p=1154761&amp;seqNum=7">Windows Batch Files for Fun and Profit</a>&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
         </div>
 
         <footer class="col-md-12">
