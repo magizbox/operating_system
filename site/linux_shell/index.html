@@ -127,14 +127,138 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#shell">Shell</a></li>
+            <li><a href="#expression">Expression</a></li>
+            <li><a href="#command">Command</a></li>
+            <li><a href="#condition">Condition</a></li>
+            <li><a href="#loop">Loop</a></li>
             <li><a href="#arguments">Arguments</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="shell">Shell</h1>
+<h2 id="shell">Shell</h2>
 <p><a href="http://batsh.org/">Batsh - A language that compiles to Bash and Windows Batch</a></p>
-<h2 id="arguments">Arguments</h2>
+<h3 id="expression">Expression</h3>
+<div class="row">
+<div markdown="span" class="col-xs-6">
+
+<pre><code># Pseudo Code
+a = 1;
+b = &quot;string&quot;;
+c = [1, 2, &quot;str&quot;, true, false];
+a = 1 + 2
+b = a * 7
+c = &quot;Con&quot; ++ &quot;cat&quot;;
+d = c ++ b
+</code></pre></div>
+<div class="col-xs-6">
+<pre><code class="sh"># Bash
+a=$((1))
+b=&quot;string&quot;
+c=($((1)) $((2)) &quot;str&quot; $((1)) $((0)))
+a=$((1 + 2))
+b=$(($a * 7))
+c=&quot;Con&quot;&quot;cat&quot;
+d=&quot;$c&quot;&quot;$b&quot;
+</code></pre></div>
+<p></div> <!-- end row --></p>
+<h3 id="command">Command</h3>
+<div class="row">
+<div markdown="span" class="col-xs-6">
+
+<pre><code># Pseudo Code
+println(&quot;Hello world&quot;);
+print(&quot;Hello&quot;);
+println(&quot; world&quot;);
+
+java = &quot;/usr/bin/java&quot;;
+call(java, &quot;-jar&quot;, &quot;closure.jar&quot;);
+</code></pre></div>
+<div class="col-xs-6">
+<pre><code class="sh"># Bash
+&quot;echo&quot; &quot;-e&quot; &quot;Hello world&quot;
+&quot;echo&quot; &quot;-ne&quot; &quot;Hello&quot;
+&quot;echo&quot; &quot;-e&quot; &quot; world&quot;
+
+java=&quot;/usr/bin/java&quot;
+&quot;$java&quot; &quot;-jar&quot; &quot;closure.jar&quot;
+</code></pre></div>
+<p></div> <!-- end row --></p>
+<h3 id="condition">Condition</h3>
+<div class="row">
+<div markdown="span" class="col-xs-6">
+
+<pre><code># Pseudo Code
+a = 3;
+if (a &gt; 2) {
+  println(&quot;Yes&quot;);
+} else {
+  println(&quot;No&quot;);
+}
+</code></pre>
+
+<pre><code># else if
+a = 10;
+if (a &gt; 7) {
+  println(&quot;Big&quot;);
+} else if (a &gt; 4) {
+  println(&quot;Medium&quot;);
+} else {
+  println(&quot;Small&quot;);
+}
+</code></pre></div>
+<div class="col-xs-6">
+<pre><code class="sh"># Bash
+a=$((3))
+if [ $(($a &gt; 2)) == 1 ]; then
+  &quot;echo&quot; &quot;-e&quot; &quot;Yes&quot;
+else
+  &quot;echo&quot; &quot;-e&quot; &quot;No&quot;
+fi
+</code></pre>
+
+<pre><code># elif
+a=5
+if [ &quot;$a&quot; -gt 7 ]; then
+  echo &quot;Big&quot;
+elif [ &quot;$a&quot; -gt 4 ]; then
+  echo &quot;Medium&quot;
+else
+  echo &quot;Small&quot;
+fi
+</code></pre></div>
+<p></div> <!-- end row --></p>
+<h3 id="loop">Loop</h3>
+<div class="row">
+<div markdown="span" class="col-xs-6">
+
+<pre><code># Pseudo Code: Fibonacci
+n = 0;
+i = 0;
+j = 1;
+while (n &lt; 60) {
+  k = i + j;
+  i = j;
+  j = k;
+  n = n + 1;
+  echo(k);
+}
+</code></pre></div>
+<div class="col-xs-6">
+<pre><code class="sh"># Bash: Fibonacci
+n=0
+i=0
+j=1
+while [ &quot;$n&quot; -lt 60 ]; do
+  k=$(($i + $j))
+  i=&quot;$j&quot;
+  j=&quot;$k&quot;
+  n=$(($n + 1))
+  &quot;echo&quot; &quot;$k&quot;
+done
+</code></pre></div>
+<p></div> <!-- end row --></p>
+<h3 id="arguments">Arguments</h3>
 <pre><code class="sh">$ cat myscript
 #!/bin/bash
 echo &quot;First arg: $1&quot;

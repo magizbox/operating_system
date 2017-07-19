@@ -142,13 +142,33 @@
         }, 
         {
             "location": "/linux_shell/", 
-            "text": "Shell\n\n\nBatsh - A language that compiles to Bash and Windows Batch\n\n\nArguments\n\n\n$ cat myscript\n#!/bin/bash\necho \nFirst arg: $1\n\necho \nSecond arg: $2\n\n\n$ ./myscript hello world\nFirst arg: hello\nSecond arg: world", 
+            "text": "Shell\n\n\nBatsh - A language that compiles to Bash and Windows Batch\n\n\nExpression\n\n\n\n\n\n\n\n# Pseudo Code\na = 1;\nb = \nstring\n;\nc = [1, 2, \nstr\n, true, false];\na = 1 + 2\nb = a * 7\nc = \nCon\n ++ \ncat\n;\nd = c ++ b\n\n\n\n\n\n# Bash\na=$((1))\nb=\nstring\n\nc=($((1)) $((2)) \nstr\n $((1)) $((0)))\na=$((1 + 2))\nb=$(($a * 7))\nc=\nCon\ncat\n\nd=\n$c\n$b\n\n\n\n\n \n\n\nCommand\n\n\n\n\n\n\n\n# Pseudo Code\nprintln(\nHello world\n);\nprint(\nHello\n);\nprintln(\n world\n);\n\njava = \n/usr/bin/java\n;\ncall(java, \n-jar\n, \nclosure.jar\n);\n\n\n\n\n\n# Bash\n\necho\n \n-e\n \nHello world\n\n\necho\n \n-ne\n \nHello\n\n\necho\n \n-e\n \n world\n\n\njava=\n/usr/bin/java\n\n\n$java\n \n-jar\n \nclosure.jar\n\n\n\n\n \n\n\nCondition\n\n\n\n\n\n\n\n# Pseudo Code\na = 3;\nif (a \n 2) {\n  println(\nYes\n);\n} else {\n  println(\nNo\n);\n}\n\n\n\n\n# else if\na = 10;\nif (a \n 7) {\n  println(\nBig\n);\n} else if (a \n 4) {\n  println(\nMedium\n);\n} else {\n  println(\nSmall\n);\n}\n\n\n\n\n\n# Bash\na=$((3))\nif [ $(($a \n 2)) == 1 ]; then\n  \necho\n \n-e\n \nYes\n\nelse\n  \necho\n \n-e\n \nNo\n\nfi\n\n\n\n\n# elif\na=5\nif [ \n$a\n -gt 7 ]; then\n  echo \nBig\n\nelif [ \n$a\n -gt 4 ]; then\n  echo \nMedium\n\nelse\n  echo \nSmall\n\nfi\n\n\n\n \n\n\nLoop\n\n\n\n\n\n\n\n# Pseudo Code: Fibonacci\nn = 0;\ni = 0;\nj = 1;\nwhile (n \n 60) {\n  k = i + j;\n  i = j;\n  j = k;\n  n = n + 1;\n  echo(k);\n}\n\n\n\n\n\n# Bash: Fibonacci\nn=0\ni=0\nj=1\nwhile [ \n$n\n -lt 60 ]; do\n  k=$(($i + $j))\n  i=\n$j\n\n  j=\n$k\n\n  n=$(($n + 1))\n  \necho\n \n$k\n\ndone\n\n\n\n \n\n\nArguments\n\n\n$ cat myscript\n#!/bin/bash\necho \nFirst arg: $1\n\necho \nSecond arg: $2\n\n\n$ ./myscript hello world\nFirst arg: hello\nSecond arg: world", 
             "title": "Shell"
         }, 
         {
             "location": "/linux_shell/#shell", 
             "text": "Batsh - A language that compiles to Bash and Windows Batch", 
             "title": "Shell"
+        }, 
+        {
+            "location": "/linux_shell/#expression", 
+            "text": "# Pseudo Code\na = 1;\nb =  string ;\nc = [1, 2,  str , true, false];\na = 1 + 2\nb = a * 7\nc =  Con  ++  cat ;\nd = c ++ b   # Bash\na=$((1))\nb= string \nc=($((1)) $((2))  str  $((1)) $((0)))\na=$((1 + 2))\nb=$(($a * 7))\nc= Con cat \nd= $c $b", 
+            "title": "Expression"
+        }, 
+        {
+            "location": "/linux_shell/#command", 
+            "text": "# Pseudo Code\nprintln( Hello world );\nprint( Hello );\nprintln(  world );\n\njava =  /usr/bin/java ;\ncall(java,  -jar ,  closure.jar );   # Bash echo   -e   Hello world  echo   -ne   Hello  echo   -e    world \n\njava= /usr/bin/java  $java   -jar   closure.jar", 
+            "title": "Command"
+        }, 
+        {
+            "location": "/linux_shell/#condition", 
+            "text": "# Pseudo Code\na = 3;\nif (a   2) {\n  println( Yes );\n} else {\n  println( No );\n}  # else if\na = 10;\nif (a   7) {\n  println( Big );\n} else if (a   4) {\n  println( Medium );\n} else {\n  println( Small );\n}   # Bash\na=$((3))\nif [ $(($a   2)) == 1 ]; then\n   echo   -e   Yes \nelse\n   echo   -e   No \nfi  # elif\na=5\nif [  $a  -gt 7 ]; then\n  echo  Big \nelif [  $a  -gt 4 ]; then\n  echo  Medium \nelse\n  echo  Small \nfi", 
+            "title": "Condition"
+        }, 
+        {
+            "location": "/linux_shell/#loop", 
+            "text": "# Pseudo Code: Fibonacci\nn = 0;\ni = 0;\nj = 1;\nwhile (n   60) {\n  k = i + j;\n  i = j;\n  j = k;\n  n = n + 1;\n  echo(k);\n}   # Bash: Fibonacci\nn=0\ni=0\nj=1\nwhile [  $n  -lt 60 ]; do\n  k=$(($i + $j))\n  i= $j \n  j= $k \n  n=$(($n + 1))\n   echo   $k \ndone", 
+            "title": "Loop"
         }, 
         {
             "location": "/linux_shell/#arguments", 

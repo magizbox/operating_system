@@ -18,7 +18,7 @@ pages:
 
 markdown_extensions:
     - footnotes
-
+    - markdown.extensions.extra
 extra_css:
   - css/book.css
   - css/course.css
