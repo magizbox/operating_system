@@ -60,3 +60,46 @@ Step 3. After finishing the installation, start Pycharm. It will prompt you to a
 ```
 http://idea.qinxi1992.cn
 ```
+
+# Install NVDIA Driver in Ubuntu 16.04
+
+```
+$ nvcc --version
+
+$ nvidia-smi
+```
+
+References:
+
+* https://askubuntu.com/questions/799184/how-can-i-install-cuda-on-ubuntu-16-04
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
