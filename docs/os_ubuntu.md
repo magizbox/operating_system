@@ -63,7 +63,18 @@ http://idea.qinxi1992.cn
 
 # Install NVDIA Driver in Ubuntu 16.04
 
+
 ```
+$ lspci | grep -i nvidia
+
+sudo apt purge nvidia-*** nvidia-settings
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-add-repository ppa:xorg-edgers/ppa 
+sudo apt update
+sudo apt dist-upgrade
+sudo apt install nvidia-381
+sudo reboot
+
 $ nvcc --version
 
 $ nvidia-smi
@@ -72,34 +83,3 @@ $ nvidia-smi
 References:
 
 * https://askubuntu.com/questions/799184/how-can-i-install-cuda-on-ubuntu-16-04
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
