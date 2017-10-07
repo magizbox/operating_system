@@ -28,6 +28,7 @@ https://www.jetbrains.com/idea/download/
 ### Create Ubuntu desktop launcher
 
 run intellij : cd to folder intellij
+
 ```
 cd file://path intellij/idea.sh
 ```
