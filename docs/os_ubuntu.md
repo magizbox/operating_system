@@ -74,12 +74,66 @@ sudo apt update
 sudo apt dist-upgrade
 sudo apt install nvidia-381
 sudo reboot
+```
 
+3. Verify GPU driver installation
+
+```
+$ nvidia-smi
+
+Mon Oct  9 08:38:24 2017       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 381.22                 Driver Version: 381.22                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 980     Off  | 0000:01:00.0      On |                  N/A |
+|  0%   44C    P8    16W / 196W |    527MiB /  4035MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID  Type  Process name                               Usage      |
+|=============================================================================|
+|    0      1106    G   /usr/lib/xorg/Xorg                             290MiB |
+|    0      2340    G   compiz                                         147MiB |
+|    0      5309    G   ...el-token=2868BBA605F5AD7A475E4323058D9F6C    86MiB |
++-----------------------------------------------------------------------------+
+```
+
+Install CUDA
+
+1. Download `deb (local)` from https://developer.nvidia.com/cuda-80-ga2-download-archive
+
+2. Run command
+
+```
+sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+```
+
+3. Configure PATH
+
+Edit `~/.bashrc`
+
+```
+export PATH="/usr/local/cuda-8.0/bin:$PATH"
+```
+
+4. Verify CUDA Installation
+
+```
 $ nvcc --version
 
-$ nvidia-smi
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2016 NVIDIA Corporation
+Built on Tue_Jan_10_13:22:03_CST_2017
+Cuda compilation tools, release 8.0, V8.0.61
 ```
 
 References:
 
+* http://www.pradeepadiga.me/blog/2017/03/22/installing-cuda-toolkit-8-0-on-ubuntu-16-04/
 * https://askubuntu.com/questions/799184/how-can-i-install-cuda-on-ubuntu-16-04
